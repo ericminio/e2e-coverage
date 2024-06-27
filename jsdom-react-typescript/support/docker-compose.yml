@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+    dev:
+        build: .
+        image: ubuntu:jsdom-react-typescript
+        container_name: ubuntu-jsdom-react-typescript
+        ports:
+            - 3000:3000
+        volumes:
+            - ../.nvmrc:/root/code/.nvmrc
+            - ../package.json:/root/code/package.json
+            - ../package-lock.json:/root/code/package-lock.json
+            - ../babel.config.json:/root/code/babel.config.json
+            - ../.nycrc.json:/root/code/.nycrc.json
+            - ../jest.config.cjs:/root/code/jest.config.cjs
+            - ../jest.setup.js:/root/code/jest.setup.js
+            - ../about:/root/code/about
+            - ../app:/root/code/app

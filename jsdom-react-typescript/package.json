@@ -1,0 +1,50 @@
+{
+    "name": "learning-react",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "pretest": "npm run instrument && npm run build && rm -rf .nyc_output && mkdir .nyc_output",
+        "test": "jest",
+        "posttest": "nyc report",
+        "prettier:check": "npx prettier --check .",
+        "prettier:write": "npx prettier --write .",
+        "build:react": "browserify -r react -r react-dom/client -r react/jsx-runtime -o app/client/react.js",
+        "instrument": "rm -rf .instrumented && nyc instrument app .instrumented",
+        "build": "browserify -t [ babelify --extensions .ts,.tsx ] -x react -x react-dom/client -x react/jsx-runtime .instrumented/client/index.tsx -o .build/webapp.js --extension=.tsx"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/cli": "^7.24.7",
+        "@babel/core": "^7.24.7",
+        "@babel/eslint-parser": "^7.24.7",
+        "@babel/plugin-transform-react-jsx": "^7.24.7",
+        "@babel/preset-env": "^7.24.7",
+        "@babel/preset-react": "^7.24.7",
+        "@babel/preset-typescript": "^7.24.7",
+        "@testing-library/react": "^16.0.0",
+        "@types/jest": "^29.5.12",
+        "@types/mocha": "^10.0.6",
+        "@types/react": "^18.3.1",
+        "@types/react-dom": "^18.3.0",
+        "babelify": "^10.0.0",
+        "browserify": "^17.0.0",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "jest-when": "^3.6.0",
+        "jsdom": "^24.1.0",
+        "mocha": "^10.4.0",
+        "prettier": "^2.8.4"
+    },
+    "dependencies": {
+        "express": "^4.19.2",
+        "nyc": "^17.0.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-redux": "^9.1.2",
+        "react-router-dom": "^6.23.1",
+        "redux": "^5.0.1"
+    }
+}
