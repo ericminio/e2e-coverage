@@ -1,4 +1,4 @@
-name: CI
+name: jsdom-react-typescript
 
 on:
   push:
