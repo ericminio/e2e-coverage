@@ -6,7 +6,9 @@
     "type": "module",
     "scripts": {
         "pretest": "npm run instrument && npm run build && rm -rf .nyc_output && mkdir .nyc_output",
-        "test": " testcafe chrome:headless about",
+        "test": "npm run test:external && npm run test:internal",
+        "test:external": "testcafe chrome:headless about",
+        "test:internal": "jest app",
         "posttest": "nyc report",
         "prettier:check": "npx prettier --check .",
         "prettier:write": "npx prettier --write .",

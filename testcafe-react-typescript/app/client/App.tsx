@@ -14,7 +14,7 @@ export function App(): React.JSX.Element {
                 setData(incoming);
             })
             .catch(() => {
-                setData({ message: 'oops, sorry' });
+                setData({ message: 'oops' });
             });
     }, []);
 
