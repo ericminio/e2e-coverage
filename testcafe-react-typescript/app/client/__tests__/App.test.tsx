@@ -1,5 +1,4 @@
 import React from 'react';
-import fs from 'fs';
 
 import { render } from '@testing-library/react';
 
@@ -10,12 +9,6 @@ describe('App', () => {
         global.fetch = jest.fn(async () => ({
             json: () => Promise.reject(),
         })) as jest.Mock;
-    });
-    afterEach(() => {
-        fs.writeFileSync(
-            `.nyc_output/coverage-App-${Date.now()}.json`,
-            JSON.stringify(global.__coverage__)
-        );
     });
 
     it('discloses errors if any', async () => {
