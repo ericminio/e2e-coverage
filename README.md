@@ -1,3 +1,5 @@
 Combining code coverage from external and internal tests.
 
-[![CI](https://github.com/ericminio/e2e-coverage/actions/workflows/ci.yml/badge.svg)](https://github.com/ericminio/e2e-coverage/actions/workflows/ci.yml)
+[![jsdom-react-typescript](https://github.com/ericminio/e2e-coverage/actions/workflows/jsdom-react-typescript.yml/badge.svg)](https://github.com/ericminio/e2e-coverage/actions/workflows/jsdom-react-typescript.yml)
+
+[![testcafe-react-typescript](https://github.com/ericminio/e2e-coverage/actions/workflows/testcafe-react-typescript.yml/badge.svg)](https://github.com/ericminio/e2e-coverage/actions/workflows/testcafe-react-typescript.yml)
