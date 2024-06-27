@@ -1,0 +1,19 @@
+{
+    "all": true,
+    "include": ["app"],
+    "exclude": ["app/client/react.js", "**/__tests__/**"],
+    "parser-plugins": [
+        "typescript",
+        "jsx",
+        "asyncGenerators",
+        "bigInt",
+        "classProperties",
+        "classPrivateProperties",
+        "dynamicImport",
+        "importMeta",
+        "objectRestSpread",
+        "optionalCatchBinding"
+    ],
+    "temp-dir": ".nyc_output",
+    "report-dir": "coverage"
+}
