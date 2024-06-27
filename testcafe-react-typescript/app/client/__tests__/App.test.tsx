@@ -3,7 +3,7 @@ import fs from 'fs';
 
 import { render } from '@testing-library/react';
 
-import { App } from '../../../.instrumented/client/App';
+import { App } from '../App';
 
 describe('App', () => {
     beforeEach(() => {
