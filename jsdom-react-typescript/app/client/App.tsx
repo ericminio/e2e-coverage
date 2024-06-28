@@ -12,6 +12,9 @@ export function App(): React.JSX.Element {
             .then((response) => response.json())
             .then((incoming: Data) => {
                 setData(incoming);
+            })
+            .catch(() => {
+                setData({ message: 'oops' });
             });
     }, []);
 
