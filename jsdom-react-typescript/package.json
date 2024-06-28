@@ -9,7 +9,7 @@
         "test": "npm run test:external && npm run test:internal",
         "test:external": "jest --clearCache && jest about",
         "test:internal": "jest --clearCache && jest app",
-        "posttest": "nyc report",
+        "posttest": "nyc report > README.txt",
         "prettier:check": "npx prettier --check .",
         "prettier:write": "npx prettier --write .",
         "coverage:clean": "rm -rf .nyc_output && mkdir .nyc_output",
