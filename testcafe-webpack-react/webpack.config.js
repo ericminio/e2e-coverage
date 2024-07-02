@@ -4,6 +4,8 @@ import path, { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+import webpack from 'webpack';
+
 export default {
     mode: 'development',
     entry: './.instrumented/client/index.tsx',
@@ -23,4 +25,9 @@ export default {
             },
         ],
     },
+    plugins: [
+        new webpack.ProvidePlugin({
+            React: 'react',
+        }),
+    ],
 };
