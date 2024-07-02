@@ -18,13 +18,6 @@ app.get('/webapp.js', function (_, response) {
     response.write(code);
     response.end();
 });
-app.get('/react.js', function (_, response) {
-    response.setHeader('Content-Type', 'text/javascript');
-    const code = fs.readFileSync('app/client/react.js').toString();
-
-    response.write(code);
-    response.end();
-});
 
 app.get('/data', function (_, response) {
     response.setHeader('Content-Type', 'application/json');
