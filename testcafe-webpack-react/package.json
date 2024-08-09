@@ -8,13 +8,13 @@
         "test": "npm run test:external && npm run test:internal",
         "test:external": "testcafe chrome:headless about",
         "test:internal": "jest --clearCache && jest app",
-        "posttest": "nyc report",
+        "posttest": "nyc report > README.txt",
         "coverage:clean": "rm -rf .nyc_output && mkdir .nyc_output",
         "prettier:check": "npx prettier --check .",
         "prettier:write": "npx prettier --write .",
         "instrument": "rm -rf .instrumented && nyc instrument app .instrumented",
         "build": "webpack --config webpack.config.js",
-        "start": "node app/server/server.js"
+        "start": "nodemon --watch app -e js,mjs,cjs,json,html,tsx --exec \"npm run instrument && npm run build && node app/server/server.js\""
     },
     "author": "",
     "license": "ISC",
@@ -34,6 +34,7 @@
         "babelify": "^10.0.0",
         "jest": "^29.7.0",
         "jest-environment-jsdom": "^29.7.0",
+        "nodemon": "^3.1.4",
         "prettier": "^2.8.4",
         "testcafe": "^3.6.1",
         "webpack": "^5.92.1",
